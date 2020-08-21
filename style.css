@@ -18,3 +18,9 @@ body {
 .string {
     color: #DC8A63;
 }
+
+a {
+    margin-bottom: 4px;
+    display: block;
+    text-decoration-color: #b1b1a87a;
+}
