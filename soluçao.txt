@@ -1,0 +1,3 @@
+http://localhost:5000/?search=<script>alert(123)</script>
+
+http://localhost:5000/?search=<svg onload=alert(123)>

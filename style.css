@@ -1,0 +1,20 @@
+html {
+    background-color: #242424;
+}
+
+body {
+    text-align: center;
+}
+
+* {
+    color: #B1B1A8;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.tag {
+    color: #559EB4;
+}
+
+.string {
+    color: #DC8A63;
+}
