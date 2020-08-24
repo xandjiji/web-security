@@ -1,5 +1,4 @@
-<script>alert(123)</script>
-<script>document.querySelector('html').innerHTML = ''</script>
+<svg onload="alert(123)">
 
 usar template engine
 

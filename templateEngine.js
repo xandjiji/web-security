@@ -15,15 +15,14 @@ const writeHTML = async () => {
         </head>
         
         <body>
-            <h1 class="tag">Seção de comentários</h1>
+            <h1 class="tag">Comidas deliciosas</h1>
 
             <ul>
-                ${await renderComments()}
+                ${await renderFood()}
             </ul>
 
-            <form id="comment-form" action="/addComment" method="POST">
-                <input type="text" placeholder="Nome" name="author" required>
-                <textarea type="text" placeholder="Comentário" name="comment" required></textarea>
+            <form id="image-form" action="/addImage" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image">
                 <button type="submit">Enviar</button>
             </form>
         </body>
@@ -33,33 +32,36 @@ const writeHTML = async () => {
 
     await fs.writeFile('index.html', template);
 
-    async function renderComments() {
+    async function renderFood() {
         let template = '';
         try {
             /* reading data */
-            let data = await fs.readFile(`comments.json`, 'utf-8');
-            data = JSON.parse(data);
+            const fileList = await fs.readdir('./uploads');
+            const pureSvgs = await Promise.all(fileList.map(getPureContent));
 
             /* painting comments */
-            data.forEach(element => {
-                template += commentTemplate(element);
+            pureSvgs.forEach(element => {
+                template += foodTemplate(element);
             });
-            
+
         } catch (error) {
             console.log(error);
         } finally {
             return template;
         }
 
-        function commentTemplate(commentItem) {
-            const { author, comment } = commentItem;
-
+        function foodTemplate(foodSvg) {
             return `
                 <li>
-                    <h3 class="string">${author}</h3>
-                    <p>${comment}</p>
+                    ${foodSvg}
                 </li>
             `
+        }
+
+        async function getPureContent(filename) {
+            const pureContent = await fs.readFile(`./uploads/${filename}`, 'utf-8');
+
+            return pureContent;
         }
     }
 }

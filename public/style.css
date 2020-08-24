@@ -36,6 +36,8 @@ ul, form {
 ul {
     padding: 0;
     margin-bottom: 44px;
+    display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
 }
 
@@ -47,12 +49,18 @@ li, form {
     box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.14);
 }
 
+li {
+    margin-bottom: 16px;
+}
+
 li:not(:last-child) {
-    margin-bottom: 12px;
+    margin-right: 16px;
 }
 
 li * {
     margin: 0;
+    width: 64px;
+    height: 64px;
 }
 
 /* comment form */
@@ -68,20 +76,8 @@ form, form * {
 }
 
 form input, form textarea {
-    padding: 6px 12px;
-    margin-bottom: 16px;
-    
-    display: block;
-    width: 100%;
-
+    box-shadow: none;
     color: #000;
-    outline: none;
-    border: none;
-}
-
-form textarea {
-    padding: 12px;
-    height: 80px;
 }
 
 form button {
@@ -94,3 +90,4 @@ form button {
     font-weight: 700;
     cursor: pointer;
 }
+
