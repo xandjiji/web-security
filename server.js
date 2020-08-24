@@ -5,7 +5,7 @@ const formidable = require('formidable');
 const fs = require('fs').promises;
 const { writeHTML } = require('./templateEngine');
 
-const useTemplateEngine = true;
+const useTemplateEngine = false;
 
 
 if (useTemplateEngine) {
