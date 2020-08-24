@@ -1,0 +1,91 @@
+html {
+    background-color: #242424;
+}
+
+body {
+    text-align: center;
+}
+
+* {
+    color: #B1B1A8;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+.tag {
+    color: #559EB4;
+}
+
+.string {
+    color: #DC8A63;
+}
+
+a {
+    margin-bottom: 4px;
+    display: block;
+    text-decoration-color: #b1b1a87a;
+}
+
+/* comments */
+ul {
+    padding: 0 140px;
+    margin-bottom: 44px;
+    list-style-type: none;
+}
+
+li, form {
+    padding: 16px;
+    text-align: left;
+    border-radius: 6px;
+    background-color: rgb(48, 48, 48);
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.14);
+}
+
+li:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+li * {
+    margin: 0;
+}
+
+/* comment form */
+form {
+    margin: 0 140px;
+    background-color: rgb(124, 124, 124);
+}
+
+form, form * {
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.14);
+}
+
+form input, form textarea {
+    padding: 6px 12px;
+    margin-bottom: 16px;
+    
+    display: block;
+    width: 100%;
+
+    color: #000;
+    outline: none;
+    border: none;
+}
+
+form textarea {
+    padding: 12px;
+    height: 80px;
+}
+
+form button {
+    padding: 6px 16px;
+    margin-left: auto;
+    display: block;
+
+    background-color: #DC8A63;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+}
