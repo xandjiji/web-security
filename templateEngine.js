@@ -22,8 +22,8 @@ const writeHTML = async () => {
             </ul>
 
             <form id="comment-form" action="/addComment" method="POST">
-                <input type="text" placeholder="name" name="author" required>
-                <textarea type="text" placeholder="comment" name="comment" required></textarea>
+                <input type="text" placeholder="Nome" name="author" required>
+                <textarea type="text" placeholder="Comentário" name="comment" required></textarea>
                 <button type="submit">Enviar</button>
             </form>
         </body>

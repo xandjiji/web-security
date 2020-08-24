@@ -3,7 +3,7 @@ const app = express();
 
 const { appendComment } = require('./crud');
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
