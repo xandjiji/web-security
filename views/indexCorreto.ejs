@@ -14,9 +14,9 @@
     <h1 class="tag">Comidas deliciosas</h1>
 
     <ul>
-        <% for(const item of foodSvgs){ %>
+        <% for(const item of foodNames){ %>
             <li>
-                <%= item %>
+                <div class="food-icon" style="background-image: url('/uploads/<%= item %>');"></div>
             </li>
         <% } %>
     </ul>

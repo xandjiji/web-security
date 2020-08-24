@@ -24,10 +24,11 @@ app.get('/', async (req, res) => {
 
     if (useTemplateEngine) {
         
-        const fileList = await fs.readdir('./uploads');
+        const fileList = await fs.readdir('./public/uploads');
         const pureSvgs = await Promise.all(fileList.map(getPureContent));
 
-        res.render('index.ejs', { foods: pureSvgs });
+        /* res.render('index.ejs', { foodSvgs: pureSvgs, foodNames: fileList }); */
+        res.render('indexCorreto.ejs', { foodSvgs: pureSvgs, foodNames: fileList });
     } else {
         res.sendFile(`${__dirname}/index.html`);
     }
@@ -42,7 +43,7 @@ app.post('/addImage', async (req, res) => {
         const { path, name } = files.image;
 
         const oldPath = path;
-        const newPath = `${__dirname}/uploads/${name}`;
+        const newPath = `${__dirname}/public/uploads/${name}`;
         const rawData = await fs.readFile(oldPath);
 
         await fs.writeFile(newPath, rawData);
@@ -53,7 +54,8 @@ app.post('/addImage', async (req, res) => {
 });
 
 async function getPureContent(filename) {
-    const pureContent = await fs.readFile(`./uploads/${filename}`, 'utf-8');
+    const pureContent = await fs.readFile(`./public/uploads/${filename}`, 'utf-8');
 
     return pureContent;
 }
+

@@ -26,13 +26,13 @@ a {
     text-decoration-color: #b1b1a87a;
 }
 
-/* comment section */
+/* food section */
 ul, form {
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* comments */
+/* foods */
 ul {
     padding: 0;
     margin-bottom: 44px;
@@ -57,13 +57,17 @@ li:not(:last-child) {
     margin-right: 16px;
 }
 
+.food-icon {
+    background-size: 100%;
+}
+
 li * {
     margin: 0;
     width: 64px;
     height: 64px;
 }
 
-/* comment form */
+/* food form */
 form {
     background-color: rgb(124, 124, 124);
 }

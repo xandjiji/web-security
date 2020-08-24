@@ -2,4 +2,6 @@
 
 usar template engine
 
+usar css background-image url
+
 https://owasp.org/www-community/xss-filter-evasion-cheatsheet

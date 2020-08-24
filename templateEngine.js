@@ -36,7 +36,7 @@ const writeHTML = async () => {
         let template = '';
         try {
             /* reading data */
-            const fileList = await fs.readdir('./uploads');
+            const fileList = await fs.readdir('./public/uploads');
             const pureSvgs = await Promise.all(fileList.map(getPureContent));
 
             /* painting comments */
@@ -59,7 +59,7 @@ const writeHTML = async () => {
         }
 
         async function getPureContent(filename) {
-            const pureContent = await fs.readFile(`./uploads/${filename}`, 'utf-8');
+            const pureContent = await fs.readFile(`./public/uploads/${filename}`, 'utf-8');
 
             return pureContent;
         }
