@@ -26,9 +26,15 @@ a {
     text-decoration-color: #b1b1a87a;
 }
 
+/* comment section */
+ul, form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* comments */
 ul {
-    padding: 0 140px;
+    padding: 0;
     margin-bottom: 44px;
     list-style-type: none;
 }
@@ -51,7 +57,6 @@ li * {
 
 /* comment form */
 form {
-    margin: 0 140px;
     background-color: rgb(124, 124, 124);
 }
 
