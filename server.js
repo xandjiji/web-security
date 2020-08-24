@@ -27,8 +27,8 @@ app.get('/', async (req, res) => {
         const fileList = await fs.readdir('./public/uploads');
         const pureSvgs = await Promise.all(fileList.map(getPureContent));
 
-        /* res.render('index.ejs', { foodSvgs: pureSvgs, foodNames: fileList }); */
-        res.render('indexCorreto.ejs', { foodSvgs: pureSvgs, foodNames: fileList });
+        res.render('index.ejs', { foodSvgs: pureSvgs, foodNames: fileList });
+        /* res.render('indexCorreto.ejs', { foodSvgs: pureSvgs, foodNames: fileList }); */
     } else {
         res.sendFile(`${__dirname}/index.html`);
     }
