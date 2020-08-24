@@ -11,20 +11,18 @@
 </head>
 
 <body>
-    <h1 class="tag">Seção de comentários</h1>
+    <h1 class="tag">Comidas deliciosas</h1>
 
     <ul>
-        <% for(const item of comments){ %>
+        <% for(const item of foods){ %>
             <li>
-                <h3 class="string"><%= item.author %></h3>
-                <p><%= item.comment %></p>
+                <%- item %>
             </li>
         <% } %>
     </ul>
 
-    <form id="comment-form" action="/addComment" method="POST">
-        <input type="text" placeholder="Nome" name="author" required>
-        <textarea type="text" placeholder="Comentário" name="comment" required></textarea>
+    <form id="image-form" action="/addImage" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
         <button type="submit">Enviar</button>
     </form>
 </body>

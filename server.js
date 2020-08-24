@@ -5,7 +5,7 @@ const formidable = require('formidable');
 const fs = require('fs').promises;
 const { writeHTML } = require('./templateEngine');
 
-const useTemplateEngine = false;
+const useTemplateEngine = true;
 
 
 if (useTemplateEngine) {
@@ -23,9 +23,11 @@ app.listen(3000, () => {
 app.get('/', async (req, res) => {
 
     if (useTemplateEngine) {
-        let data = await fs.readFile(`comments.json`, 'utf-8');
-        data = JSON.parse(data);
-        res.render('index.ejs', { comments: data });
+        
+        const fileList = await fs.readdir('./uploads');
+        const pureSvgs = await Promise.all(fileList.map(getPureContent));
+
+        res.render('index.ejs', { foods: pureSvgs });
     } else {
         res.sendFile(`${__dirname}/index.html`);
     }
@@ -50,3 +52,8 @@ app.post('/addImage', async (req, res) => {
     res.redirect('/');
 });
 
+async function getPureContent(filename) {
+    const pureContent = await fs.readFile(`./uploads/${filename}`, 'utf-8');
+
+    return pureContent;
+}
