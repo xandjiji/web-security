@@ -1,4 +1,6 @@
 <script>alert(123)</script>
 <script>document.querySelector('html').innerHTML = ''</script>
 
+usar template engine
+
 https://owasp.org/www-community/xss-filter-evasion-cheatsheet

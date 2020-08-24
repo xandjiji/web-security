@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS</title>
+
+    <link rel="stylesheet" href="/style.css">
+    <script defer src="/main.js"></script>
+</head>
+
+<body>
+    <h1 class="tag">Seção de comentários</h1>
+
+    <ul>
+        <% for(const item of comments){ %>
+            <li>
+                <h3 class="string"><%= item.author %></h3>
+                <p><%= item.comment %></p>
+            </li>
+        <% } %>
+    </ul>
+
+    <form id="comment-form" action="/addComment" method="POST">
+        <input type="text" placeholder="Nome" name="author" required>
+        <textarea type="text" placeholder="Comentário" name="comment" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
